@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://json.schemastore.org/clang-format.json
+BasedOnStyle: WebKit
+Standard: c++17
+UseTab: false
+TabWidth: 4
+IndentWidth: 4
+ColumnLimit: 120
+CommentPragmas: "^!|^:"
+PointerBindsToType: false
+SpaceAfterTemplateKeyword: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterFunction: true
+  AfterNamespace: false
+  AfterObjCDeclaration: false
+  AfterStruct: true
+  AfterUnion: false
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 8
+NamespaceIndentation: None
+AlignAfterOpenBracket: true
+AlwaysBreakTemplateDeclarations: true
+AllowShortFunctionsOnASingleLine: Inline
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AlwaysBreakAfterReturnType: None
+PenaltyReturnTypeOnItsOwnLine: 5000
+PenaltyBreakAssignment: 5000
+PenaltyBreakBeforeFirstCallParameter: 5000
+PenaltyExcessCharacter: 1
+SortIncludes: true

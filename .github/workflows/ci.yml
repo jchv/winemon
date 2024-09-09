@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 0 * * *'
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    permissions:
+      id-token: "write"
+      contents: "read"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v11
+      - uses: DeterminateSystems/magic-nix-cache-action@v6
+      - uses: DeterminateSystems/flake-checker-action@v7
+        with:
+          ignore-missing-flake-lock: false
+          fail-mode: true
+      - name: Check Formatting
+        run: nix run .#format -- --check
+        if: success() || failure()
+      - name: Build with Clang Tidy
+        run: nix build .#winemanClangTidy
+        if: success() || failure()

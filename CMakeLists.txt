@@ -29,8 +29,20 @@ endif()
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 qt_standard_project_setup()
 
-qt_add_executable(wineman main.cpp)
+qt_add_executable(
+  wineman
+  src/main.cpp
+  src/maindialog.cpp
+  src/maindialog.h
+  src/winemanager.cpp
+  src/winemanager.h
+  src/winemonitor.cpp
+  src/winemonitor.h
+  src/winemonitor_linux.cpp
+  src/winemonitor_linux.h
+  src/wineserverlist.cpp
+  src/wineserverlist.h)
 
-target_link_libraries(wineman PRIVATE Qt6::Widgets)
+target_link_libraries(wineman PRIVATE Qt6::Widgets Qt6::DBus)
 
 install(TARGETS wineman DESTINATION ${CMAKE_INSTALL_BINDIR})

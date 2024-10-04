@@ -4,7 +4,7 @@
 #include <QProcess>
 #include <QStringBuilder>
 
-#include <signal.h>
+#include <csignal>
 
 #include "wineserverlist.h"
 

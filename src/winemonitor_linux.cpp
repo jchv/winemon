@@ -158,9 +158,6 @@ void WineMonitorLinux::checkWineserverDirectory(const QString &serverPath)
 
 void WineMonitorLinux::addWineserverProcessToEpoll(pid_t pid)
 {
-    struct sockaddr_un addr = {};
-    struct ucred ucred = {};
-
     if (havePid(pid)) {
         return;
     }

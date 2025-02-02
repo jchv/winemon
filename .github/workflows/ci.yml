@@ -19,9 +19,6 @@ jobs:
         with:
           ignore-missing-flake-lock: false
           fail-mode: true
-      - name: Check Formatting
-        run: nix run .#format -- --check
-        if: success() || failure()
-      - name: Build with Clang Tidy
-        run: nix build .#winemanClangTidy
+      - name: Run Flake Checks
+        run: nix flake check
         if: success() || failure()

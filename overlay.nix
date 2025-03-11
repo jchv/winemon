@@ -3,5 +3,5 @@ let
   inherit (final) pkgs;
 in
 {
-  wineman = pkgs.callPackage ./package.nix { };
+  winemon = pkgs.callPackage ./package.nix { };
 }

@@ -11,7 +11,7 @@ auto main(int argc, char *argv[]) -> int
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("jchw");
     QCoreApplication::setOrganizationDomain("io.jchw");
-    QCoreApplication::setApplicationName("Wineman");
+    QCoreApplication::setApplicationName("Winemon");
     QGuiApplication::setQuitOnLastWindowClosed(false);
 
     WineManager manager;
@@ -24,7 +24,7 @@ auto main(int argc, char *argv[]) -> int
 
 auto setupInstance(WineManager &manager) -> bool
 {
-    static constexpr const char *kServiceName = "io.jchw.wineman";
+    static constexpr const char *kServiceName = "io.jchw.winemon";
     auto connection = QDBusConnection::sessionBus();
     if (!connection.isConnected()) {
         qWarning("Cannot connect to the D-Bus session bus.");

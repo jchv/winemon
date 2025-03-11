@@ -6,14 +6,14 @@
 }:
 {
   options = {
-    programs.wineman = {
-      enable = lib.mkEnableOption "Wineman monitor program";
+    programs.winemon = {
+      enable = lib.mkEnableOption "Winemon, Wine instance monitor";
     };
   };
 
-  config = lib.mkIf config.programs.wineman.enable {
+  config = lib.mkIf config.programs.winemon.enable {
     nixpkgs.overlays = [ (import ./overlay.nix) ];
 
-    environment.systemPackages = [ pkgs.wineman ];
+    environment.systemPackages = [ pkgs.winemon ];
   };
 }

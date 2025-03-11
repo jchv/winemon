@@ -22,8 +22,8 @@
           inherit system;
           overlays = [ self.overlays.default ];
         };
-        inherit (pkgs) wineman;
-        winemanClangTidy = wineman.overrideAttrs (prev: {
+        inherit (pkgs) winemon;
+        winemonClangTidy = winemon.overrideAttrs (prev: {
           nativeBuildInputs = (prev.nativeBuildInputs or [ ]) ++ [
             pkgs.clang-tools
           ];
@@ -91,8 +91,8 @@
       in
       {
         packages = {
-          inherit wineman winemanClangTidy format;
-          default = wineman;
+          inherit winemon winemonClangTidy format;
+          default = winemon;
         };
 
         checks = {
@@ -102,7 +102,7 @@
             touch $out
           '';
 
-          inherit winemanClangTidy;
+          inherit winemonClangTidy;
         };
 
         devShells.default = pkgs.mkShell {
@@ -111,7 +111,7 @@
             pkgs.clang-tools
             pkgs.qtcreator
           ];
-          inputsFrom = [ wineman ];
+          inputsFrom = [ winemon ];
         };
       }
     );

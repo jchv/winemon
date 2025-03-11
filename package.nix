@@ -6,7 +6,7 @@
   qt6Packages,
 }:
 stdenv.mkDerivation {
-  pname = "wineman";
+  pname = "winemon";
   version = "1.0.0";
   src = ./.;
   nativeBuildInputs = [
@@ -22,6 +22,6 @@ stdenv.mkDerivation {
     "-GNinja"
   ];
   meta = {
-    mainProgram = "wineman";
+    mainProgram = "winemon";
   };
 }

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(
-  wineman
+  winemon
   VERSION 1.0.0
   LANGUAGES CXX)
 
@@ -30,7 +30,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 qt_standard_project_setup()
 
 qt_add_executable(
-  wineman
+  winemon
   src/main.cpp
   src/maindialog.cpp
   src/maindialog.h
@@ -43,6 +43,6 @@ qt_add_executable(
   src/wineserverlist.cpp
   src/wineserverlist.h)
 
-target_link_libraries(wineman PRIVATE Qt6::Widgets Qt6::DBus)
+target_link_libraries(winemon PRIVATE Qt6::Widgets Qt6::DBus)
 
-install(TARGETS wineman DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS winemon DESTINATION ${CMAKE_INSTALL_BINDIR})
